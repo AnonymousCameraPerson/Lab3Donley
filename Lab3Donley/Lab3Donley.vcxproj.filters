@@ -22,7 +22,4 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\..\..\..\Downloads\Bombing.ttf" />
-  </ItemGroup>
 </Project>
