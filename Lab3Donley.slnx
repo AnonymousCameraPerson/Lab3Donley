@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Lab3Donley/Lab3Donley.vcxproj" />
+  <Folder Name="/Solution Items/" />
+  <Project Path="Lab3Donley/Lab3Donley.vcxproj" Id="c27cc903-ed25-44ee-aec9-726e899c88b4" />
 </Solution>
