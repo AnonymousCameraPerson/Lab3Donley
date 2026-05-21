@@ -30,12 +30,12 @@ int main(void)
 
 	ALLEGRO_EVENT_QUEUE* event_queue = NULL;
 
-
+	al_init();
 	al_init_primitives_addon();
 	al_init_font_addon();
 	al_init_ttf_addon();
 
-	ALLEGRO_FONT* font24 = al_load_ttf_font("AppleGaramond.ttf", 24, 0);
+	ALLEGRO_FONT* font24 = al_load_ttf_font("Bombing.ttf", 24, 0);
 
 	if (!font24) {
 		al_show_native_message_box(Screen, "Error!", "Failed to load font!", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
