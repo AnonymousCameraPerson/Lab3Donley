@@ -22,6 +22,9 @@ int main(void)
 		al_show_native_message_box(Screen, "Error!", "Failed to create the display.", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
 		return -1;
 	}
+	al_init_primitives_addon();
+	al_clear_to_color(al_map_rgb(0, 0, 0));
+
 
 	bool draw = false, done = false;;
 	int pos_x = width / 2;
@@ -30,8 +33,8 @@ int main(void)
 
 	ALLEGRO_EVENT_QUEUE* event_queue = NULL;
 
-	al_init();
-	al_init_primitives_addon();
+
+	//al_init_primitives_addon();
 	al_init_font_addon();
 	al_init_ttf_addon();
 
@@ -45,7 +48,9 @@ int main(void)
 
 
 	al_register_event_source(event_queue, al_get_display_event_source(Screen));
-	al_clear_to_color(al_map_rgb(0, 0, 0));
+
+	//al_clear_to_color(al_map_rgb(0, 0, 0));
+	
 
 	if (!al_install_mouse()) {
 		al_show_native_message_box(Screen, "Error!", "Failed to initialize the mouse!\n.", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
@@ -53,7 +58,7 @@ int main(void)
 	}
 
 	al_register_event_source(event_queue, al_get_mouse_event_source());
-
+	
 	//al_hide_mouse_cursor(display);
 
 	while (!done)
@@ -74,9 +79,10 @@ int main(void)
 			}
 		}
 
-
+		
 		if (draw)
 		{
+			al_draw_filled_circle(pos_x, pos_y, 10, al_map_rgb(255, 0, 0));
 			if (pos_x <= 200 && pos_x >= 0 && pos_y >= 0 && pos_y <= 200) {
 
 				al_draw_filled_rectangle(0, 0, 200, 200, al_map_rgb(150, 150, 150));
