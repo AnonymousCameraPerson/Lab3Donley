@@ -87,20 +87,27 @@ int main(void)
 			if (pos_x <= width/2 && pos_x >= 0 && pos_y >= 0 && pos_y <= height/2) {
 
 				al_draw_filled_rectangle(0, 0, width/2, height/2, al_map_rgb(255, 255, 255));
-				al_draw_filled_rectangle(400, 400, 640, 480, al_map_rgb(0, 0, 0));
+				al_draw_filled_circle(pos_x, pos_y, 10, al_map_rgb(255, 0, 0));
 				al_draw_textf(font24, al_map_rgb(0, 0, 0), pos_x, pos_y, ALLEGRO_ALIGN_LEFT, "The mouse is located at = %i / %i", pos_x, pos_y);
 				al_flip_display();
 			}
-			else if (pos_x >= 400 && pos_x <= 640 && pos_y >= 400 && pos_y <= 480) {
-				al_draw_filled_rectangle(400, 400, 640, 480, al_map_rgb(150, 0, 150));
-				al_draw_filled_rectangle(0, 0, 200, 200, al_map_rgb(0, 0, 0));
+			else if (pos_x >= width/2 && pos_x <= width && pos_y >= 0 && pos_y <= height/2) {
+				al_draw_filled_rectangle(width/2, 0, width, height/2, al_map_rgb(0, 0, 0));
+				al_draw_filled_circle(pos_x, pos_y, 10, al_map_rgb(255, 0, 0));
 				al_draw_textf(font24, al_map_rgb(255, 255, 255), pos_x, pos_y, ALLEGRO_ALIGN_LEFT, "The mouse is located at = %i / %i", pos_x, pos_y);
 				al_flip_display();
 			}
+			else if (pos_x <=width/2 && pos_x >=0 && pos_y >=height/2 && pos_y <=height) {
+				al_draw_filled_rectangle(0, height/2, width/2, height, al_map_rgb(0, 0, 255));
+				//al_draw_filled_rectangle(400, 400, 640, 480, al_map_rgb(0, 0, 0));
+				al_draw_filled_circle(pos_x, pos_y, 10, al_map_rgb(255, 0, 0));
+				al_draw_textf(font24, al_map_rgb(255, 255, 0), pos_x, pos_y, ALLEGRO_ALIGN_LEFT, "The mouse is located at = %i / %i", pos_x, pos_y);
+				al_flip_display();
+			}
 			else {
-				al_draw_filled_rectangle(0, 0, 200, 200, al_map_rgb(0, 0, 0));
-				al_draw_filled_rectangle(400, 400, 640, 480, al_map_rgb(0, 0, 0));
-				al_draw_textf(font24, al_map_rgb(255, 255, 255), pos_x, pos_y, ALLEGRO_ALIGN_LEFT, "The mouse is located at = %i / %i", pos_x, pos_y);
+				al_draw_filled_rectangle(width/2, height / 2, width, height, al_map_rgb(255, 255, 0));
+				al_draw_filled_circle(pos_x, pos_y, 10, al_map_rgb(255, 0, 0));
+				al_draw_textf(font24, al_map_rgb(0, 140, 255), pos_x, pos_y, ALLEGRO_ALIGN_LEFT, "The mouse is located at = %i / %i", pos_x, pos_y);
 				al_flip_display();
 			}
 
